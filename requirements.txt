@@ -1,4 +1,5 @@
 streamlit
-spacy
 nltk
+spacy
 pandas
+en-core-web-sm==3.8.0
