@@ -2,6 +2,9 @@
 
 A modern Streamlit-based Natural Language Processing (NLP) application built using **Python**, **NLTK**, and **spaCy**. The application allows users to enter any paragraph and performs multiple NLP tasks through an interactive and user-friendly interface.
 
+## 🚀 Live Demo
+🔗 https://nlp-text-analyzer-obvq3uhbbyb73cpkpkcznu.streamlit.app
+
 ## 🚀 Features
 
 - ✂️ Sentence Segmentation
