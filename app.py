@@ -17,10 +17,10 @@ st.set_page_config(page_title="NLP Text Analyzer", page_icon="🧠", layout="wid
 @st.cache_resource(show_spinner=False)
 def load_nlp_resources():
     """Downloads required data once and reuses the loaded spaCy pipeline."""
-    nltk.download("punkt_tab", quiet=True)
+    nltk.download("punkt", quiet=True)
     nltk.download("stopwords", quiet=True)
     nltk.download("wordnet", quiet=True)
-    nltk.download("averaged_perceptron_tagger_eng", quiet=True)
+    nltk.download("averaged_perceptron_tagger", quiet=True)
     return spacy.load("en_core_web_sm")
 
 
@@ -157,5 +157,15 @@ if analyze:
         card("📦 Noun Phrase Chunking", "".join(f"<div class='token-output'>• {escape(chunk)}</div>" for chunk in noun_phrases) or "<div class='token-output'>No noun phrases found.</div>")
 
         report = f"""NLP TEXT ANALYZER REPORT\n{'=' * 28}\n\nOriginal Text:\n{text}\n\nSentence Segmentation:\n""" + "\n".join(f"{i}: {sent}" for i, sent in enumerate(sentences, 1)) + f"""\n\nWord Tokenization:\n{words}\n\nAfter Stop Word Removal:\n{filtered_words}\n\nAfter Stemming:\n{stemmed_words}\n\nAfter Lemmatization:\n{lemmatized_words}\n\nPOS Tagging:\n""" + "\n".join(f"{word} | {tag}" for word, tag in pos_tags) + "\n\nNamed Entity Recognition (NER):\n" + "\n".join(f"{ent.text} -> {ent.label_}" for ent in doc.ents) + "\n\nDependency Parsing:\n" + "\n".join(f"{word} -> {dependency} -> {head}" for word, dependency, head in dependencies) + "\n\nNoun Phrase Chunking:\n" + "\n".join(noun_phrases)
+
+
+        st.download_button(
+            label="📥 Download Report",
+            data=report,
+            file_name="NLP_Report.txt",
+            mime="text/plain",
+            use_container_width=True,
+        )
+
 
 st.markdown("<div class='footer'>Made with ❤️ using Streamlit, NLTK and spaCy</div>", unsafe_allow_html=True)
