@@ -2,6 +2,10 @@ import io
 from html import escape
 
 import nltk
+nltk.download("punkt", quiet=True)
+nltk.download("punkt_tab", quiet=True)
+nltk.download("stopwords", quiet=True)
+nltk.download("wordnet", quiet=True)
 import pandas as pd
 import spacy
 import streamlit as st
