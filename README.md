@@ -1,6 +1,8 @@
 # 🧠 NLP Text Analyzer
 
-A modern Streamlit-based Natural Language Processing (NLP) application built using **Python**, **NLTK**, and **spaCy**. The application allows users to enter any paragraph and performs multiple NLP tasks through an interactive and user-friendly interface.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shashwati-01/nlp-text-analyzer/blob/main/app.py)
+
+A modern Streamlit-based Natural Language Processing (NLP) application built using Python, NLTK, and spaCy. The application allows users to enter any paragraph and performs multiple NLP tasks through an interactive and user-friendly interface.
 
 ## 🚀 Live Demo
 🔗 https://nlp-text-analyzer-obvq3uhbbyb73cpkpkcznu.streamlit.app
